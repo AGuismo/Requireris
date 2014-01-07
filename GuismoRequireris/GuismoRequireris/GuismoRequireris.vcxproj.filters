@@ -62,6 +62,15 @@
     <ClCompile Include="sha1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ManageAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ManageAccount.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ManageAccount.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="AGuismoRequireris.h">
@@ -72,6 +81,12 @@
     </CustomBuild>
     <CustomBuild Include="AGuismoRequireris.qrc">
       <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ManageAccount.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ManageAccount.ui">
+      <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +101,9 @@
     </ClInclude>
     <ClInclude Include="base32.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ManageAccount.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

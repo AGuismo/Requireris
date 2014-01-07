@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageAccount</class>
+ <widget class="QDialog" name="ManageAccount">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>233</width>
+    <height>101</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ManageAccount</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog
+{
+	border-image: url(./Img/background.jpg);
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">	color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Account Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="newKeyLineEdit_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(220, 220, 255, 180);
+border-width: 2px;
+border-radius: 8px;
+border-color: rgb(0, 0, 0);
+min-width: 10em;
+padding: 2px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true">	color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Account Key:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="newKeyLineEdit">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(220, 220, 255, 180);
+border-width: 2px;
+border-radius: 8px;
+border-color: rgb(0, 0, 0);
+min-width: 10em;
+padding: 2px;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="deletePushButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#deletePushButton
+{
+	color: rgb(255, 255, 255);
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 24, 185, 255), stop:1 rgba(163, 175, 255, 255));
+	border-style: outset;
+	border-width: 1px;
+	border-radius: 10px;
+min-width: 4em;
+	padding: 6px;
+}
+
+QPushButton#deletePushButton:hover
+{
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 148, 255, 255), stop:1 rgba(0, 8, 84, 255));
+	border-style: inset;
+}
+
+QPushButton#deletePushButton:pressed 
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 56, 183, 255), stop:1 rgba(135, 172, 255, 255));
+     border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="addPushButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#addPushButton
+{
+	color: rgb(255, 255, 255);
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(0, 24, 185, 255), stop:1 rgba(163, 175, 255, 255));
+	border-style: outset;
+	border-width: 1px;
+	border-radius: 10px;
+	border-color: rgb(255, 255, 255);
+	min-width: 4em;
+	padding: 6px;
+}
+
+QPushButton#addPushButton:hover
+{
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 148, 255, 255), stop:1 rgba(0, 8, 84, 255));
+	border-style: inset;
+}
+
+QPushButton#addPushButton:pressed 
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 56, 183, 255), stop:1 rgba(135, 172, 255, 255));
+     border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Add</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
