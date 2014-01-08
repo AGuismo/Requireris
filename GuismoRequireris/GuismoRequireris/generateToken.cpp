@@ -5,40 +5,35 @@
 #include	<cstring>
 
 
-#define BITS_PER_BASE32_CHAR      5
-
-
-int generateCode(const char *key, unsigned long tm) 
+int generateCode(const std::string &secret, unsigned long timeStamp) 
 {
-  unsigned char challenge[8];
+	int keySize = (secret.size() + 7)/8*5;
+	unsigned char challenge[8];
+	unsigned char key[100];
+	unsigned char hash[20];
 
-  for (int i = 8; i--; tm >>= 8) 
-    challenge[i] = tm;
+	if (keySize <= 0 || keySize > 100)
+		return -1;
 
-  int secretLen = (strlen(key) + 7)/8*BITS_PER_BASE32_CHAR;
+	if ((keySize = base32_decode((const unsigned char *)secret.c_str(), key, keySize)) < 1)
+		return -1;
 
-  if (secretLen <= 0 || secretLen > 100) {
-    return -1;
-  }
+	for (int i = 8; i--; timeStamp >>= 8) 
+		challenge[i] = timeStamp;
 
-  unsigned char secret[100];
+	hmac_sha1(key, keySize, challenge, 8, hash, SHA1_DIGEST_LENGTH);
 
-  if ((secretLen = base32_decode((const unsigned char *)key, secret, secretLen))<1) {
-    return -1;
-  }
+	int offset = hash[20 - 1] & 0xF;
+	unsigned int code = 0;
 
-  unsigned char hash[20];
-  hmac_sha1(secret, secretLen, challenge, 8, hash, SHA1_DIGEST_LENGTH);
+	for (int i = 0; i < 4; ++i)
+	{
+	    code <<= 8;
+		code  |= hash[offset + i];
+	}
 
-  int offset = hash[20 - 1] & 0xF;
-
-  unsigned int truncatedHash = 0;
-  for (int i = 0; i < 4; ++i) {
-    truncatedHash <<= 8;
-    truncatedHash  |= hash[offset + i];
-  }
-
-  truncatedHash &= 0x7FFFFFFF;
-  truncatedHash %= 1000000;
-  return truncatedHash;
+	code &= 0x7FFFFFFF;
+	code %= 1000000;
+ 
+	return code;
 }

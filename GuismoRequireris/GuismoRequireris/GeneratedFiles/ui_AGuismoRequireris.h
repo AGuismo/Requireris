@@ -17,8 +17,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
@@ -41,9 +39,6 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *addPushButton;
     QPushButton *deletePushButton;
-    QMenuBar *menuBar;
-    QMenu *menuRequireris;
-    QMenu *menuManage_account;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *AGuismoRequirerisClass)
@@ -107,7 +102,9 @@ public:
 "border-radius: 8px;\n"
 "border-color: rgb(0, 0, 0);\n"
 "min-width: 10em;\n"
-"padding: 2px;"));
+"padding: 2px;\n"
+"/*border-image: url(./Img/Logo.png);*/\n"
+"	"));
 
         gridLayout_3->addWidget(keyListWidget, 1, 0, 1, 1);
 
@@ -209,22 +206,9 @@ public:
         gridLayout_3->addLayout(gridLayout, 0, 0, 1, 1);
 
         AGuismoRequirerisClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(AGuismoRequirerisClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 346, 18));
-        menuRequireris = new QMenu(menuBar);
-        menuRequireris->setObjectName(QStringLiteral("menuRequireris"));
-        menuManage_account = new QMenu(menuBar);
-        menuManage_account->setObjectName(QStringLiteral("menuManage_account"));
-        AGuismoRequirerisClass->setMenuBar(menuBar);
         statusBar = new QStatusBar(AGuismoRequirerisClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         AGuismoRequirerisClass->setStatusBar(statusBar);
-
-        menuBar->addAction(menuRequireris->menuAction());
-        menuBar->addAction(menuManage_account->menuAction());
-        menuRequireris->addAction(actionQuit);
-        menuManage_account->addAction(actionModify);
 
         retranslateUi(AGuismoRequirerisClass);
 
@@ -240,8 +224,6 @@ public:
         modifyPushButton->setText(QApplication::translate("AGuismoRequirerisClass", "Modify", 0));
         addPushButton->setText(QApplication::translate("AGuismoRequirerisClass", "Add", 0));
         deletePushButton->setText(QApplication::translate("AGuismoRequirerisClass", "Delete", 0));
-        menuRequireris->setTitle(QApplication::translate("AGuismoRequirerisClass", "Requireris", 0));
-        menuManage_account->setTitle(QApplication::translate("AGuismoRequirerisClass", "Manage keys", 0));
     } // retranslateUi
 
 };

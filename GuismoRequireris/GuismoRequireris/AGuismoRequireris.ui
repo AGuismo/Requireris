@@ -62,7 +62,9 @@ border-width: 2px;
 border-radius: 8px;
 border-color: rgb(0, 0, 0);
 min-width: 10em;
-padding: 2px;</string>
+padding: 2px;
+/*border-image: url(./Img/Logo.png);*/
+	</string>
       </property>
      </widget>
     </item>
@@ -192,30 +194,6 @@ QPushButton#deletePushButton:pressed
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>346</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuRequireris">
-    <property name="title">
-     <string>Requireris</string>
-    </property>
-    <addaction name="actionQuit"/>
-   </widget>
-   <widget class="QMenu" name="menuManage_account">
-    <property name="title">
-     <string>Manage keys</string>
-    </property>
-    <addaction name="actionModify"/>
-   </widget>
-   <addaction name="menuRequireris"/>
-   <addaction name="menuManage_account"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAdd">
