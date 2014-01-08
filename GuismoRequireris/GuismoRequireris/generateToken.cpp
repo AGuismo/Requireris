@@ -8,7 +8,7 @@
 int generateCode(const std::string &secret, unsigned long timeStamp) 
 {
 	int keySize = (secret.size() + 7)/8*5;
-	unsigned char challenge[8];
+	unsigned char message[8];
 	unsigned char key[100];
 	unsigned char hash[20];
 
@@ -19,9 +19,9 @@ int generateCode(const std::string &secret, unsigned long timeStamp)
 		return -1;
 
 	for (int i = 8; i--; timeStamp >>= 8) 
-		challenge[i] = timeStamp;
+		message[i] = timeStamp;
 
-	hmac_sha1(key, keySize, challenge, 8, hash, SHA1_DIGEST_LENGTH);
+	hmac_sha1(key, keySize, message, 8, hash, SHA1_DIGEST_LENGTH);
 
 	int offset = hash[20 - 1] & 0xF;
 	unsigned int code = 0;
